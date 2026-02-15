@@ -64,6 +64,7 @@ export const enum PerkIds {
     PrecisionRecycling = "precision_recycling",
     LootBaron = "loot_baron",
     Overclocked = "overclocked",
+    NightVision = "night_vision",
 
     //
     // Halloween Perks
@@ -254,6 +255,13 @@ const perks = [
         category: PerkCategories.Normal,
         fireRateMod: 0.65,
         spreadMod: 2
+    },
+    {
+        idString: PerkIds.NightVision,
+        name: "Night Vision",
+        defType: DefinitionType.Perk,
+        category: PerkCategories.Normal,
+        noDrop: true
     },
     //
     // Halloween perks

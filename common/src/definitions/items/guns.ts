@@ -3451,6 +3451,53 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
                 ]
             }
         }
+    },
+    {
+        idString: "ak67",
+        name: "AK-67",
+        defType: DefinitionType.Gun,
+        tier: Tier.S,
+        ammoType: "67cal",
+        ammoSpawnAmount: 267,
+        capacity: 167,
+        extendedCapacity: 267,
+        reloadTime: 4,
+        fireDelay: 30,
+        switchDelay: 400,
+        speedMultiplier: 1,
+        recoilMultiplier: 0.75,
+        recoilDuration: 150,
+        fireMode: FireMode.Auto,
+        shotSpread: 2,
+        moveSpread: 6,
+        length: 7.75,
+        fists: {
+            left: Vec(115, -2),
+            right: Vec(45, 0),
+            rightZIndex: 4,
+            animationDuration: 100
+        },
+        image: { position: Vec(85, 1) },
+        casingParticles: [{
+            frame: "casing_762x39mm",
+            position: Vec(4.2, 0.4)
+        }],
+        gasParticles: {
+            amount: 4,
+            spread: 30,
+            minSize: 0.2,
+            maxSize: 0.4,
+            minLife: 1000,
+            maxLife: 2000,
+            minSpeed: 5,
+            maxSpeed: 15
+        },
+        ballistics: {
+            damage: 14,
+            obstacleMultiplier: 1.5,
+            speed: 0.26,
+            range: 300
+        }
     }
 ] satisfies readonly RawGunDefinition[]).flatMap((def: RawGunDefinition) => {
     if (def.dual === undefined) {

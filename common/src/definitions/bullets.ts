@@ -16,7 +16,8 @@ const bulletColors: Record<string, number> = {
     "338lap": 0x408000,
     "545mm": 0xff8847,
     "bb": 0xaaaaaa,
-    "shrapnel": 0x1d1d1d
+    "shrapnel": 0x1d1d1d,
+    "67cal": 0xdd00ff,
 };
 
 const saturatedBulletColors: Record<string, number> = {
@@ -28,7 +29,8 @@ const saturatedBulletColors: Record<string, number> = {
     "338lap": 0x92d211,
     "545mm": 0xff5500,
     "bb": 0xeeeeee,
-    "shrapnel": 0x363636
+    "shrapnel": 0x363636,
+    "67cal": 0xdd00ff,
 };
 
 export const Bullets = new ObjectDefinitions<BulletDefinition>(

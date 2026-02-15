@@ -130,6 +130,20 @@ export const Ammos = new ObjectDefinitions<AmmoDefinition>([
         defaultCasingFrame: "casing_firework_rocket",
         hideUnlessPresent: true
     },
+    {
+        idString: "67cal",
+        name: ".67 cal",
+        defType: DefinitionType.Ammo,
+        maxStackSize: 67,
+        minDropAmount: 3,
+        characteristicColor: {
+            hue: 292,
+            saturation: 100,
+            lightness: 100
+        },
+        defaultCasingFrame: "casing_9x39mm",
+        hideUnlessPresent: true
+    },
 
     // Ephemeral ammo types below
 

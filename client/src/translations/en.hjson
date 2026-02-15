@@ -427,6 +427,7 @@
 "vepr12": "Vepr-12"
 "badlander": "Badlander"
 "ak47": "AK-47"
+"ak67": "AK-67"
 "vector": "Vector"
 "mini14": "Mini-14"
 "model_37": "Model 37"
@@ -470,6 +471,8 @@
 // Perks
 "second_wind": "Second Wind"
 "second_wind_desc": "Move faster below half health."
+"night_vision": "Night Vision"
+"night_vision_desc": "See in the dark."
 "flechettes": "Fléchettes"
 "flechettes_desc": "All bullets splinter into 3 weaker versions."
 "sabot_rounds": "Sabot Rounds"

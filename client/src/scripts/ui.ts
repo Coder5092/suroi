@@ -1338,7 +1338,7 @@ export async function setUpUI(): Promise<void> {
     );
 
     // Load special tab
-    if (GameConsole.getBuiltInCVar("dv_role") !== "") {
+    if (true) { // GameConsole.getBuiltInCVar("dv_role") !== ""
         $("#tab-special").show();
 
         $<HTMLInputElement>("#role-name")

@@ -449,7 +449,7 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
         layer: true,
         activeC4s: true,
         perks: true,
-     //   updatedPerks: true,
+        //   updatedPerks: true,
         teamID: true
     };
 
@@ -522,6 +522,26 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
 
         this._scope = scope;
         this.dirty.zoom = true;
+
+        if (this.perks.includes(PerkData.thermal_goggles)) {
+            if (this.inventory.helmet?.perk != undefined) {
+                if (this.inventory.helmet.perk == PerkIds.ThermalGoggles)
+                    return;
+            }
+
+            if (scope.givenPerk == undefined)
+                this.removePerk(PerkData.thermal_goggles);
+            else if (scope.givenPerk != PerkIds.ThermalGoggles)
+                this.removePerk(PerkData.thermal_goggles);
+        } else if (this.perks.includes(PerkData.night_vision)) {
+            if (scope.givenPerk == undefined)
+                this.removePerk(PerkData.night_vision);
+            else if (scope.givenPerk != PerkIds.NightVision)
+                this.removePerk(PerkData.night_vision);
+        }
+
+        if (scope.givenPerk != undefined)
+            this.addPerk(scope.givenPerk);
     }
     private _zoomOverride = 0;
     private _noClip = false;
@@ -629,7 +649,7 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
 
     readonly perks: PerkDefinition[] = [];
 
-   // updatedPerks: PerkDefinition[] = [];
+    // updatedPerks: PerkDefinition[] = [];
 
     perkUpdateMap?: Map<PerkDefinition, number>; // key = perk, value = last updated
 
@@ -1717,7 +1737,7 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
                 // Loot
                 if (object.isLoot && object.hitbox.collidesWith(detectionHitbox)) {
                     const direction = Vec.sub(this.position, object.position),
-                          normalizedDir = Vec.normalize(direction);
+                        normalizedDir = Vec.normalize(direction);
 
                     object.push(Math.atan2(normalizedDir.y, normalizedDir.x), perk.lootPush);
                     hasMagneticField = true;
@@ -2105,7 +2125,7 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
             (this.perkUpdateMap ??= new Map<PerkDefinition, number>())
                 .set(perkDef, this.game.now);
 
-           // this.updatePerk(perkDef);
+            // this.updatePerk(perkDef);
         }
 
         if (this.hasPerk(PerkIds.HollowPoints) && this.hasPerk(PerkIds.ExperimentalForcefield) && this.hasPerk(PerkIds.ThermalGoggles)) {
@@ -2137,11 +2157,11 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
                 this.action?.cancel();
 
                 const vests = Armors.definitions.filter(armor => armor.armorType === ArmorType.Vest && !armor.noDrop && !armor.perk),
-                      helmets = Armors.definitions.filter(armor => armor.armorType === ArmorType.Helmet && !armor.noDrop && !armor.perk),
-                      backpacks = Backpacks.definitions.filter(backpack => !backpack.perk),
-                      guns = Guns.definitions.filter(gun => !gun.devItem && !gun.noSwap),
-                      melees = Melees.definitions.filter(melee => !melee.noDrop && !melee.devItem),
-                      skins = Skins.definitions.filter(skin => !skin.rolesRequired && !skin.noDrop && !skin.grassTint);
+                    helmets = Armors.definitions.filter(armor => armor.armorType === ArmorType.Helmet && !armor.noDrop && !armor.perk),
+                    backpacks = Backpacks.definitions.filter(backpack => !backpack.perk),
+                    guns = Guns.definitions.filter(gun => !gun.devItem && !gun.noSwap),
+                    melees = Melees.definitions.filter(melee => !melee.noDrop && !melee.devItem),
+                    skins = Skins.definitions.filter(skin => !skin.rolesRequired && !skin.noDrop && !skin.grassTint);
 
                 this.inventory.helmet = pickRandomInArray(helmets);
                 this.inventory.vest = pickRandomInArray(vests);
@@ -2291,7 +2311,7 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
                 this.perkUpdateMap = undefined;
             }
 
-           // removeFrom(this.updatedPerks, perkDef);
+            // removeFrom(this.updatedPerks, perkDef);
         }
 
         // ! evil starts here

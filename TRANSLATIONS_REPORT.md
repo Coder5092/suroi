@@ -2,7 +2,7 @@
 
 This file is a report of all errors and missing keys in the translation files of this game.
 
-## 🇦🇱 Shqip (53% Complete) - ab.hjson
+## 🇦🇱 Shqip (52% Complete) - ab.hjson
 
 ### Invalid Keys
 
@@ -125,6 +125,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -268,6 +270,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `pumpkin_explosion` is not defined
 - Key `region_ea` is not defined
 - Key `region_oc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -393,6 +397,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -561,6 +567,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -750,6 +758,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -1037,6 +1047,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `confetti_grenade_explosion` is not defined
 - Key `pumpkin_explosion` is not defined
 - Key `region_ea` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `overclocked` is not defined
@@ -1067,7 +1079,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇮🇷 فارسی (96% Complete) - fa.hjson
+## 🇮🇷 فارسی (95% Complete) - fa.hjson
 
 ### (No Invalid Keys)
 
@@ -1081,6 +1093,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `settings_weapon_compare` is not defined
 - Key `settings_weapon_compare_condensed` is not defined
 - Key `kf_disconnected` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -1092,7 +1106,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `plumpkin_blessing` is not defined
 - Key `plumpkin_blessing_desc` is not defined
 
-## 🇫🇮 suomi (58% Complete) - fi.hjson
+## 🇫🇮 suomi (57% Complete) - fi.hjson
 
 ### Invalid Keys
 
@@ -1195,6 +1209,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -1335,6 +1351,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `confetti_grenade_explosion` is not defined
 - Key `pumpkin_explosion` is not defined
 - Key `region_ea` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `overclocked` is not defined
@@ -1347,7 +1365,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overweight` is not defined
 - Key `overweight_desc` is not defined
 
-## 🇬🇷 Ελληνικά (96% Complete) - gr.hjson
+## 🇬🇷 Ελληνικά (95% Complete) - gr.hjson
 
 ### (No Invalid Keys)
 
@@ -1361,6 +1379,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `settings_weapon_compare` is not defined
 - Key `settings_weapon_compare_condensed` is not defined
 - Key `kf_disconnected` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -1490,6 +1510,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -1575,7 +1597,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇭🇺 Magyar (83% Complete) - hu.hjson
+## 🇭🇺 Magyar (82% Complete) - hu.hjson
 
 ### Invalid Keys
 
@@ -1627,6 +1649,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `confetti_grenade_explosion` is not defined
 - Key `pumpkin_explosion` is not defined
 - Key `region_ea` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `overclocked` is not defined
@@ -1788,6 +1812,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -2123,6 +2149,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `settings_cooler_weapon_gas` is not defined
 - Key `settings_weapon_compare` is not defined
 - Key `settings_weapon_compare_condensed` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 
 ## 🇱🇹 Lietuvių (55% Complete) - lt.hjson
 
@@ -2238,6 +2266,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -2437,6 +2467,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -2557,6 +2589,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `frag_grenade_explosion` is not defined
 - Key `confetti_grenade_explosion` is not defined
 - Key `pumpkin_explosion` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -2568,7 +2602,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `plumpkin_blessing` is not defined
 - Key `plumpkin_blessing_desc` is not defined
 
-## 🇵🇱 Polski (58% Complete) - pl.hjson
+## 🇵🇱 Polski (57% Complete) - pl.hjson
 
 ### Invalid Keys
 
@@ -2671,6 +2705,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -2756,7 +2792,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🎀 Cute Engwish (62% Complete) - qen.hjson
+## 🎀 Cute Engwish (61% Complete) - qen.hjson
 
 ### Invalid Keys
 
@@ -2842,6 +2878,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -2960,6 +2998,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `frag_grenade_explosion` is not defined
 - Key `confetti_grenade_explosion` is not defined
 - Key `pumpkin_explosion` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -2971,7 +3011,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `plumpkin_blessing` is not defined
 - Key `plumpkin_blessing_desc` is not defined
 
-## 🇷🇺 Русский (90% Complete) - ru.hjson
+## 🇷🇺 Русский (89% Complete) - ru.hjson
 
 ### Invalid Keys
 
@@ -3022,6 +3062,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `confetti_grenade_explosion` is not defined
 - Key `pumpkin_explosion` is not defined
 - Key `region_ea` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `baby_plumpkin_pie_desc` is not defined
@@ -3069,6 +3111,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `frag_grenade_explosion` is not defined
 - Key `confetti_grenade_explosion` is not defined
 - Key `pumpkin_explosion` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `berserker` is not defined
 - Key `berserker_desc` is not defined
 - Key `overclocked` is not defined
@@ -3093,7 +3137,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `plumpkin_blessing_desc` is not defined
 - Key `experimental_forcefield_desc` is not defined
 
-## 🇹🇷 Turkısh (68% Complete) - tr.hjson
+## 🇹🇷 Turkısh (67% Complete) - tr.hjson
 
 ### Invalid Keys
 
@@ -3155,6 +3199,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_ea` is not defined
 - Key `second_wind` is not defined
 - Key `second_wind_desc` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -3240,7 +3286,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇹🇼 中文（繁體） (98% Complete) - tw.hjson
+## 🇹🇼 中文（繁體） (97% Complete) - tw.hjson
 
 ### Invalid Keys
 
@@ -3472,6 +3518,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `settings_weapon_compare_condensed` is not defined
 - Key `kf_impact_of` is not defined
 - Key `kf_disconnected` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 
 ## 🇻🇳 Tiếng Việt (83% Complete) - vi.hjson
 
@@ -3523,6 +3571,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `confetti_grenade_explosion` is not defined
 - Key `pumpkin_explosion` is not defined
 - Key `region_ea` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `overclocked` is not defined
@@ -3553,7 +3603,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇨🇳 中文（简体） (99% Complete) - zh.hjson
+## 🇨🇳 中文（简体） (98% Complete) - zh.hjson
 
 ### Invalid Keys
 
@@ -3778,4 +3828,6 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `settings_blood_splatter` is not defined
 - Key `settings_cooler_weapon_gas` is not defined
 - Key `kf_disconnected` is not defined
+- Key `night_vision` is not defined
+- Key `night_vision_desc` is not defined
 

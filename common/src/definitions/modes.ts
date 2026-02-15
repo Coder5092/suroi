@@ -10,7 +10,8 @@ export type ModeName =
     | "hunted"
     | "birthday"
     | "winter"
-    | "nye";
+    | "nye"
+    | "crates";
 
 export type SpritesheetNames = ModeName | "shared";
 
@@ -82,6 +83,20 @@ export interface ModeDefinition {
 
 export const Modes: Record<ModeName, ModeDefinition> = {
     normal: {
+        colors: {
+            grass: "hsl(95, 41%, 38%)",
+            water: "hsl(211, 63%, 42%)",
+            border: "hsl(211, 63%, 30%)",
+            beach: "hsl(40, 39%, 55%)",
+            riverBank: "hsl(34, 41%, 32%)",
+            trail: "hsl(35, 50%, 40%)",
+            gas: "hsla(17, 100%, 50%, 0.55)",
+            void: "hsl(25, 80%, 6%)"
+        },
+        ambience: "wind_ambience",
+        spriteSheets: ["shared", "normal"]
+    },
+    crates: {
         colors: {
             grass: "hsl(95, 41%, 38%)",
             water: "hsl(211, 63%, 42%)",

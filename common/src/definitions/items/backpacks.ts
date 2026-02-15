@@ -26,6 +26,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "cola": 2,
             "tablets": 1,
             "12g": 15,
+            "67cal": 67,
             "556mm": 90,
             "762mm": 90,
             "9mm": 120,
@@ -55,6 +56,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "cola": 5,
             "tablets": 2,
             "12g": 30,
+            "67cal": 167,
             "556mm": 180,
             "762mm": 180,
             "9mm": 240,
@@ -84,6 +86,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "cola": 10,
             "tablets": 3,
             "12g": 60,
+            "67cal": 267,
             "556mm": 240,
             "762mm": 240,
             "9mm": 330,
@@ -126,7 +129,8 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "smoke_grenade": 12,
             "c4": 8,
             "confetti_grenade": 16,
-            "sm56": 8
+            "sm56": 8,
+            "67cal": 6767,
         },
         defaultTint: 0x3f3f3f
     },
@@ -155,7 +159,8 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "smoke_grenade": 12,
             "c4": 8,
             "confetti_grenade": 16,
-            "sm56": 8
+            "sm56": 8,
+            "67cal": 6767,
         },
         noTint: true,
         perk: PerkIds.HollowPoints,
