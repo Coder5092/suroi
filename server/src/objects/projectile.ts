@@ -73,7 +73,7 @@ export class Projectile extends BaseGameObject.derive(ObjectCategory.Projectile)
         this.hitbox.radius = this.definition.hitboxRadius;
 
         this.health = this.definition.health ?? Infinity;
-        this.damageable = this.definition.c4 ?? false;
+        this.damageable = this.definition.c4 ?? (this.definition.landmine ?? false);
 
         this.owner = params.owner;
         this.source = params.source;
@@ -96,7 +96,7 @@ export class Projectile extends BaseGameObject.derive(ObjectCategory.Projectile)
     }
 
     update(): void {
-        if (!this.definition.c4 || this.activated) {
+        if ((!this.definition.c4 && !this.definition.landmine) || (this.definition.c4 && this.activated) || (this.definition.landmine && this.activated)) {
             this._fuseTime -= this.game.dt;
         }
 
@@ -367,6 +367,16 @@ export class Projectile extends BaseGameObject.derive(ObjectCategory.Projectile)
         return true;
     }
 
+    activateMine(): boolean {
+        if (!this.definition.landmine) {
+            throw new Error("Tried to activate non landmine projectile");
+        }
+        if (this.inAir) return false;
+        this.activated = true;
+        this.setDirty();
+        return true;
+    }
+
     override damage({ amount }: DamageParams): void {
         if (!this.health) return;
 
@@ -382,8 +392,10 @@ export class Projectile extends BaseGameObject.derive(ObjectCategory.Projectile)
         this.dead = true;
 
         if (this.owner.isPlayer) {
-            this.owner.c4s.delete(this);
-            this.owner.dirty.activeC4s = true;
+            if (this.definition.c4) {
+                this.owner.c4s.delete(this);
+                this.owner.dirty.activeC4s = true;
+            }
         }
     }
 }

@@ -65,6 +65,7 @@ export const enum PerkIds {
     LootBaron = "loot_baron",
     Overclocked = "overclocked",
     NightVision = "night_vision",
+    ThermalVision = "thermal_vision",
 
     //
     // Halloween Perks
@@ -263,6 +264,16 @@ const perks = [
         category: PerkCategories.Normal,
         noDrop: true
     },
+    {
+        idString: PerkIds.ThermalVision,
+        name: "Thermal Vision",
+        defType: DefinitionType.Perk,
+        category: PerkCategories.Normal,
+        noDrop: true,
+        detectionRadius: 100,
+        infectedEffectIgnore: true
+    },
+    
     //
     // Halloween perks
     //

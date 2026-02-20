@@ -1,6 +1,7 @@
 # Build
 dist/
 .spritesheet-cache
+*.ps1
 
 # Node
 node_modules/

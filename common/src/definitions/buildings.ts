@@ -239,7 +239,7 @@ const randomGift = {
     purple_gift: 0.1
 };
 
-const randomIglooLayout ={
+const randomIglooLayout = {
     igloo_layout_1: 0.3,
     igloo_layout_2: 1,
     igloo_layout_3: 1,
@@ -587,7 +587,7 @@ const container = (
             ]
         ]),
         closed_damaged: pickRandomInArray([
-                       [
+            [
                 {
                     key: "snow_decal_container_closed_1",
                     position: Vec(2.5, 9.08),
@@ -1183,9 +1183,9 @@ const container = (
                     }
                 ]
                 : []),
-                // Also, we need to figure out how to make the containers inside the hyperion non-snow variations. Probably gonna need to use
-                // a similar way to obstacle [outdoors] method with the _winter part.
-                // gas can container has the same snow decals as the closed damaged variant
+            // Also, we need to figure out how to make the containers inside the hyperion non-snow variations. Probably gonna need to use
+            // a similar way to obstacle [outdoors] method with the _winter part.
+            // gas can container has the same snow decals as the closed damaged variant
             // ..._snowDecalDefinitions[variant === "gas_can" ? "closed_damaged" : variant] // TEMP. Remove when winter ends. FIX ME IM A MESS
             // TODO Detect mode somehow
             // ...(GameConstants.modeName === "winter" ? snowDecalDefinitions[open] : [])
@@ -1868,7 +1868,7 @@ const fulcrumBunker = (idString: string): BuildingDefinition => ({
         { idString: "bush", position: Vec(-55.92, -38.54), rotation: 0 },
         { idString: "fulcrum_bunker_stair", position: Vec(-30.2, -39.26), rotation: 0, layer: Layer.ToBasement },
 
-            // Lower entrance
+        // Lower entrance
         { idString: idString.includes("_winter") ? randomTreeWinter : randomTree, position: Vec(-9.82, 32.88) },
         { idString: idString.includes("_winter") ? randomTreeWinter : randomTree, position: Vec(3.62, 43.58) },
         { idString: idString.includes("_winter") ? randomTreeWinter : randomTree, position: Vec(-20.92, 47.64) },
@@ -4191,8 +4191,8 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
             { idString: "regular_crate", position: Vec(85.12, -141.67), outdoors: true },
             { idString: "regular_crate", position: Vec(80.03, -131.98), outdoors: true },
 
-            { idString: "box", position: Vec(30.27, -230.74)},
-            { idString: "box", position: Vec(30.27, -235.7)},
+            { idString: "box", position: Vec(30.27, -230.74) },
+            { idString: "box", position: Vec(30.27, -235.7) },
             { idString: "box", position: Vec(70.36, -217.63), outdoors: true },
             { idString: "box", position: Vec(75.46, -217.56), outdoors: true },
             { idString: "box", position: Vec(156.55, -233.86), outdoors: true },
@@ -4200,12 +4200,12 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
             { idString: "box", position: Vec(77.83, -139.44), outdoors: true },
             { idString: "box", position: Vec(87.45, -129.9), outdoors: true },
 
-            { idString: "planted_bushes", position: Vec(73.65, -225.45), rotation: 1, outdoors:true },
-            { idString: "planted_bushes", position: Vec(109.69, -225.45), rotation: 1, outdoors:true },
+            { idString: "planted_bushes", position: Vec(73.65, -225.45), rotation: 1, outdoors: true },
+            { idString: "planted_bushes", position: Vec(109.69, -225.45), rotation: 1, outdoors: true },
 
             { idString: "smaller_sandbags", position: Vec(163.06, -234.3), rotation: 0, outdoors: true },
 
-            { idString: "pallet", position: Vec(65.4, -155.76), rotation: 2},
+            { idString: "pallet", position: Vec(65.4, -155.76), rotation: 2 },
             { idString: "box", position: Vec(67.31, -155.12), outdoors: true },
             // ------------------------------------------------------------------------------------------
 
@@ -4283,8 +4283,8 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
             { idString: "regular_crate", position: Vec(-112.72, -215.26), outdoors: true },
             { idString: "regular_crate", position: Vec(-75.61, -183.93), outdoors: true },
 
-            { idString: "planted_bushes", position: Vec(-91.86, -225.47), rotation: 1, outdoors:true },
-            { idString: "planted_bushes", position: Vec(-73.75, -225.47), rotation: 1, outdoors:true },
+            { idString: "planted_bushes", position: Vec(-91.86, -225.47), rotation: 1, outdoors: true },
+            { idString: "planted_bushes", position: Vec(-73.75, -225.47), rotation: 1, outdoors: true },
 
             { idString: "sandbags", position: Vec(-113.66, -226.97), rotation: 1, outdoors: true },
             { idString: "sandbags", position: Vec(-77.72, -174.34), rotation: 0, outdoors: true },
@@ -11629,7 +11629,7 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
         // i have no idea on how to fix the zindex of ground graphics its really messed up so we use "hacky" method
         graphicsZIndex: ZIndexes.BuildingsFloor + 0.1,
         graphics: [
-        // small office entrance "steps" (2)
+            // small office entrance "steps" (2)
             { // stroke
                 color: 0x4d4d4d,
                 hitbox: new GroupHitbox(
@@ -13361,7 +13361,8 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
             idString: {
                 hunting_stand_layout_1: 1,
                 hunting_stand_layout_2: 1,
-                hunting_stand_layout_3: 1
+                hunting_stand_layout_3: 1,
+                hunting_stand_layout_4: 1
             },
             position: Vec(0, 0)
         }]
@@ -13380,6 +13381,9 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
         { idString: "box", position: Vec(-4.89, -2.17) },
         { idString: "box", position: Vec(4.17, 3.64) },
         { idString: "box", position: Vec(-4.91, 8.03) }
+    ]),
+    huntingStandLayout(4, [
+        { idString: "mg_crate", position: Vec(0, 4), rotation: 0 },
     ]),
     {
         idString: "hunting_stand",
@@ -16933,11 +16937,13 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
             { idString: "small_bed", position: Vec(60.73, 4.92), rotation: 2 },
             { idString: "trash_can", position: Vec(31.6, -39.62) },
             { idString: "trash_can", position: Vec(-19.79, -7.23) },
-            { idString: "trash_can",  position: Vec(-2.68, 27.29) },
-            { idString: {
-                white_small_couch: 1,
-                red_small_couch: 1
-            }, position: Vec(36.3, 26.3), rotation: 2 },
+            { idString: "trash_can", position: Vec(-2.68, 27.29) },
+            {
+                idString: {
+                    white_small_couch: 1,
+                    red_small_couch: 1
+                }, position: Vec(36.3, 26.3), rotation: 2
+            },
             { idString: "window", position: Vec(-52.77, 15.66), rotation: 1 },
             { idString: "window", position: Vec(-40.3, -27.62), rotation: 1 },
             { idString: "window", position: Vec(54.98, 17.49), rotation: 1 },
@@ -17050,10 +17056,12 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
             { idString: "mansion_column", position: Vec(3.36, -5.81) },
             { idString: "mansion_column", position: Vec(-12.59, -6.25) },
             { idString: "mansion_wall_3", position: Vec(-4.84, -5.75), rotation: 0 },
-            { idString: {
-                gun_mount_scythe: 0.95,
-                gun_mount_chainsaw_leatherfaced: 0.05
-            }, position: Vec(10.83, -18.86), rotation: 0, lootSpawnOffset: Vec(0, 2.5) },
+            {
+                idString: {
+                    gun_mount_scythe: 0.95,
+                    gun_mount_chainsaw_leatherfaced: 0.05
+                }, position: Vec(10.83, -18.86), rotation: 0, lootSpawnOffset: Vec(0, 2.5)
+            },
             { idString: "graveyard_light", position: Vec(7.14, 16.71) },
             { idString: "graveyard_light", position: Vec(11.2, -11.56) }
         ]
@@ -17093,26 +17101,34 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
             { idString: "dormant_oak_tree", position: Vec(-27.6, -28.02) },
             { idString: "regular_crate", position: Vec(-35.59, -35.15), outdoors: true },
             { idString: "regular_crate", position: Vec(23.98, -35.51), outdoors: true },
-            { idString: {
-                regular_crate: 1,
-                aegis_crate: 0.5,
-                flint_crate: 0.5
-            }, position: Vec(-2.38, 0.49), outdoors: true },
+            {
+                idString: {
+                    regular_crate: 1,
+                    aegis_crate: 0.5,
+                    flint_crate: 0.5
+                }, position: Vec(-2.38, 0.49), outdoors: true
+            },
             { idString: randomBarrel, position: Vec(-35.65, 22.49), outdoors: true },
             { idString: "barrel", position: Vec(26.58, -23.47), outdoors: true },
             { idString: "dead_pine_tree", position: Vec(31.57, -27.86) },
-            { idString: {
-                pumpkin: 1,
-                large_pumpkin: 0.25
-            }, position: Vec(15.65, -9.2), outdoors: true },
-            { idString: {
-                dead_pine_tree: 1,
-                dormant_oak_tree: 1
-            }, position: Vec(-29.29, 31.79) },
-            { idString: {
-                pumpkin: 1,
-                box: 0.65
-            }, position: Vec(-32.89, -21.25), outdoors: true },
+            {
+                idString: {
+                    pumpkin: 1,
+                    large_pumpkin: 0.25
+                }, position: Vec(15.65, -9.2), outdoors: true
+            },
+            {
+                idString: {
+                    dead_pine_tree: 1,
+                    dormant_oak_tree: 1
+                }, position: Vec(-29.29, 31.79)
+            },
+            {
+                idString: {
+                    pumpkin: 1,
+                    box: 0.65
+                }, position: Vec(-32.89, -21.25), outdoors: true
+            },
             { idString: "box", position: Vec(-27.79, -37.59), outdoors: true },
             { idString: "box", position: Vec(-37.65, 37.34), outdoors: true },
             { idString: "pumpkin", position: Vec(32.91, -37.64), outdoors: true },
@@ -17122,16 +17138,20 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
             { idString: "chair", position: Vec(-19.34, 35.87), rotation: 0, outdoors: true },
             { idString: "rock", position: Vec(35.23, 24.66), outdoors: true },
             { idString: "rock", position: Vec(-24.33, 24.46), outdoors: true },
-            { idString: {
-                grenade_crate: 0.8,
-                campsite_crate: 0.2,
-                melee_crate: 0.1
-            }, position: Vec(24, 36), outdoors: true },
-            { idString: {
-                box: 1,
-                grenade_box: 0.35,
-                campsite_crate: 0.85
-            }, position: Vec(-21.52, -19.78), outdoors: true },
+            {
+                idString: {
+                    grenade_crate: 0.8,
+                    campsite_crate: 0.2,
+                    melee_crate: 0.1
+                }, position: Vec(24, 36), outdoors: true
+            },
+            {
+                idString: {
+                    box: 1,
+                    grenade_box: 0.35,
+                    campsite_crate: 0.85
+                }, position: Vec(-21.52, -19.78), outdoors: true
+            },
             { idString: "vibrant_bush", position: Vec(-19.35, -29.88), outdoors: true },
             { idString: "vibrant_bush", position: Vec(25.76, 19.72), outdoors: true },
             { idString: randomTree, position: Vec(-3.39, 16.91), outdoors: true },
@@ -17225,7 +17245,7 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
         ],
         subBuildings: IS_CLIENT ? undefined : [{
             idString: randomIglooLayout,
-            position: Vec(0 ,0)
+            position: Vec(0, 0)
         }]
     },
 
@@ -17242,10 +17262,12 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
     ]),
     iglooLayout(2, [
         { idString: "gun_case", position: Vec(41.51, -4.34), rotation: 3 },
-        { idString: {
-            box: 1,
-            grenade_box: 0.35
-        }, position: Vec(25.31, -21.66) },
+        {
+            idString: {
+                box: 1,
+                grenade_box: 0.35
+            }, position: Vec(25.31, -21.66)
+        },
         { idString: "box", position: Vec(20.06, -18.75) },
         { idString: randomGift, position: Vec(38.84, 4.95) },
         { idString: "melee_crate", position: Vec(25.07, 12.31) },
@@ -17257,17 +17279,21 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
         { idString: iglooOuterObstacle, position: Vec(-3.48, -16.68), outdoors: true }
     ]),
     iglooLayout(3, [
-        { idString: {
-            regular_crate: 0.81,
-            frozen_crate: 0.2
-        }, position: Vec(39.5, -4.52) },
+        {
+            idString: {
+                regular_crate: 0.81,
+                frozen_crate: 0.2
+            }, position: Vec(39.5, -4.52)
+        },
         { idString: "office_chair", position: Vec(20.16, -19.11), rotation: 0 },
         { idString: randomGift, position: Vec(27.09, -20.65) },
         { idString: "box", position: Vec(30.93, 11.73) },
-        { idString: {
-            box: 1,
-            grenade_box: 0.35
-        }, position: Vec(23.52, 13.34) },
+        {
+            idString: {
+                box: 1,
+                grenade_box: 0.35
+            }, position: Vec(23.52, 13.34)
+        },
         { idString: "trash_bag", position: Vec(10.59, 5.46) },
         { idString: { grenade_box: 1, box: 0.25 }, position: Vec(45.22, -24.77), outdoors: true },
         { idString: iglooOuterObstacle, position: Vec(-11.18, 16.86), outdoors: true },

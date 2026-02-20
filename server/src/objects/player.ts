@@ -523,25 +523,33 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
         this._scope = scope;
         this.dirty.zoom = true;
 
-        if (this.perks.includes(PerkData.thermal_goggles)) {
+        const targetScope = this.inventory.scope;
+
+        if (this.perks.includes(PerkData.thermal_vision)) {
             if (this.inventory.helmet?.perk != undefined) {
-                if (this.inventory.helmet.perk == PerkIds.ThermalGoggles)
+                if (this.inventory.helmet.perk == PerkIds.ThermalVision)
                     return;
             }
 
-            if (scope.givenPerk == undefined)
-                this.removePerk(PerkData.thermal_goggles);
-            else if (scope.givenPerk != PerkIds.ThermalGoggles)
-                this.removePerk(PerkData.thermal_goggles);
-        } else if (this.perks.includes(PerkData.night_vision)) {
-            if (scope.givenPerk == undefined)
+            if (targetScope == undefined)
+                this.removePerk(PerkData.thermal_vision);
+            else if (targetScope.givenPerk == undefined)
+                this.removePerk(PerkData.thermal_vision);
+            else if (targetScope.givenPerk != PerkIds.ThermalVision)
+                this.removePerk(PerkData.thermal_vision);
+        } if (this.perks.includes(PerkData.night_vision)) {
+            if (targetScope == undefined)
                 this.removePerk(PerkData.night_vision);
-            else if (scope.givenPerk != PerkIds.NightVision)
+            else if (targetScope.givenPerk == undefined)
+                this.removePerk(PerkData.night_vision);
+            else if (targetScope.givenPerk != PerkIds.NightVision)
                 this.removePerk(PerkData.night_vision);
         }
 
-        if (scope.givenPerk != undefined)
-            this.addPerk(scope.givenPerk);
+        if (targetScope != undefined) {
+            if (targetScope.givenPerk != undefined)
+                this.addPerk(targetScope.givenPerk);
+        }
     }
     private _zoomOverride = 0;
     private _noClip = false;
@@ -739,6 +747,11 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
                 killsA, killB, killsM
             ] = data.weaponPreset.split(" ");
 
+            this.inventory.backpack = Loots.fromString("tactical_pack");
+            this.inventory.vest = Loots.fromString("developr_vest");
+            // this.inventory.vest = Loots.fromString("tactical_vest");
+            this.inventory.helmet = Loots.fromString("tactical_helmet");
+
             const backpack = this.inventory.backpack;
             const determinePreset = (
                 slot: 0 | 1 | 2,
@@ -773,13 +786,17 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
                 this.inventory.items.setItem(ammoPtr, backpack.maxCapacity[ammoPtr]);
             };
 
-            this.inventory.backpack = Loots.fromString("tactical_pack");
-            this.inventory.vest = Loots.fromString("developr_vest");
-            this.inventory.helmet = Loots.fromString("tactical_helmet");
-
             for (const { idString: item } of [...HealingItems, ...Scopes]) {
                 this.inventory.items.setItem(item, backpack.maxCapacity[item]);
             }
+
+            // for (const item of [...Throwables]) {
+            //     // this.inventory.giveItem(Throwables.reify(item), backpack.maxCapacity[item]);
+            //     // this.inventory.appendWeapon(Throwables.reify(item));
+            //     if (!this.inventory.checkIfWeaponExists(item.idString)) {
+            //         this.inventory.giveItem(item, backpack.maxCapacity[item.idString]);
+            //     }
+            // }
 
             this.inventory.scope = "8x_scope";
 
@@ -1142,6 +1159,8 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
         });
     }
 
+    _thermalCooldown: number = 0;
+
     update(): void {
         const dt = this.game.dt;
 
@@ -1305,7 +1324,7 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
             let collided = false;
 
             for (const potential of this.nearObjects) {
-                const { isObstacle, isBuilding } = potential;
+                const { isObstacle, isBuilding, isProjectile } = potential;
 
                 if (
                     (isObstacle || isBuilding)
@@ -1340,6 +1359,11 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
                                 weaponUsed: potential
                             });
                         }
+                    }
+                } else if (isProjectile && potential.hitbox?.collidesWith(this._hitbox)) {
+                    if (potential.definition.landmine) {
+                        if (!potential.inAir && !(potential.owner == this) && !(this.teamID == potential.throwerTeamID))
+                            potential.activateMine();
                     }
                 }
             }
@@ -1502,6 +1526,7 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
         if (this.downed || (isInsideBuilding && !scopeTarget)) {
             scopeTarget = DEFAULT_SCOPE;
         }
+
         this.effectiveScope = scopeTarget ?? this.inventory.scope;
 
         // Rate limit team pings & emotes
@@ -1640,11 +1665,12 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
         // Update Thermal Goggles & Hollow Points perks
         // TODO this is dogshit there's gotta be a cleaner way to do this
         const hasThermalGoggles = this.hasPerk(PerkIds.ThermalGoggles);
+        const hasThermalVision = this.hasPerk(PerkIds.ThermalVision);
         const hasHollowPoints = this.hasPerk(PerkIds.HollowPoints);
-        if (hasThermalGoggles || hasHollowPoints) {
+        if (hasThermalGoggles || hasHollowPoints || hasThermalVision) {
             let indicatedPlayers;
 
-            if (hasThermalGoggles) {
+            if (hasThermalGoggles || (hasThermalVision && this._thermalCooldown <= 0)) {
                 const detectionHitbox = new CircleHitbox(PerkData[PerkIds.ThermalGoggles].detectionRadius, this.position);
                 indicatedPlayers = [];
                 this.highlightedPlayers = [];
@@ -1683,24 +1709,28 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
                 this.dirty.highlightedPlayers = true; // TODO determine if the list of highlighted players actually changed
             }
 
-            for (const [player, indicator] of this.highlightedIndicators ?? []) {
-                const lastHitTime = this.recentlyHitPlayers?.get(player);
-                if (lastHitTime !== undefined) {
-                    if (this.game.now - lastHitTime < PerkData[PerkIds.HollowPoints].highlightDuration) {
-                        indicator.updatePosition(player.position);
-                        continue;
+            if (hasThermalGoggles || hasHollowPoints || (hasThermalVision && this._thermalCooldown <= 0)) {
+                if (hasThermalVision) this._thermalCooldown = 5;
+
+                for (const [player, indicator] of this.highlightedIndicators ?? []) {
+                    const lastHitTime = this.recentlyHitPlayers?.get(player);
+                    if (lastHitTime !== undefined) {
+                        if (this.game.now - lastHitTime < PerkData[PerkIds.HollowPoints].highlightDuration) {
+                            indicator.updatePosition(player.position);
+                            continue;
+                        }
+                        this.recentlyHitPlayers?.delete(player);
                     }
-                    this.recentlyHitPlayers?.delete(player);
-                }
 
-                if (indicatedPlayers?.includes(player)) continue;
+                    if (indicatedPlayers?.includes(player)) continue;
 
-                if (indicator.dead) {
-                    this.game.mapIndicatorIDAllocator.give(indicator.id);
-                    this.highlightedIndicators?.delete(player);
+                    if (indicator.dead) {
+                        this.game.mapIndicatorIDAllocator.give(indicator.id);
+                        this.highlightedIndicators?.delete(player);
+                    }
+                    indicator.dead = true;
                 }
-                indicator.dead = true;
-            }
+            } else if (hasThermalVision && this._thermalCooldown > 0) this._thermalCooldown -= dtSeconds;
         }
 
         if (this.hasPerk(PerkIds.EternalMagnetism)) {

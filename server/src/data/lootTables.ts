@@ -26,6 +26,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             [{ item: "firework_launcher", weight: 1 }],
             [{ item: "1st_birthday", weight: 1 }]
         ],
+        mg_crate: [
+            { item: "lewis_gun", weight: 1 }
+        ],
         viking_chest: [
             [{ item: "seax", weight: 1 }],
             [{ table: "viking_chest_guns", weight: 1 }],
@@ -135,7 +138,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
         },
         grenade_box: [
             { item: "frag_grenade", weight: 1, count: 2 },
-            { item: "smoke_grenade", weight: 1, count: 2 }
+            { item: "smoke_grenade", weight: 1, count: 2 },
+            { item: "landmine", weight: 0.4, count: 2 },
+            { item: "c4", weight: 0.4, count: 2 }
         ],
         grenade_crate: {
             min: 1,
@@ -683,9 +688,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "4x_scope", weight: 1 },
             { item: "8x_scope", weight: 0.1 },
             { item: "16x_scope", weight: 0.00025 },
-            { item: "3xt_scope", weight: 0.02 },
-            { item: "5xt_scope", weight: 0.002 },
-            // { item: "4xn_scope", weight: 0.002 }
+            { item: "3x_thermal_scope", weight: 0.02 },
+            { item: "5x_thermal_scope", weight: 0.002 },
+            { item: "4x_night_vision_scope", weight: 0.002 }
         ],
         equipment: [
             { item: "basic_helmet", weight: 1 },
@@ -721,7 +726,8 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
         throwables: [
             { item: "frag_grenade", count: 2, weight: 1 },
             { item: "smoke_grenade", count: 2, weight: 1 },
-            { item: "c4", count: 2, weight: 0.2 }
+            { item: "c4", count: 2, weight: 0.2 },
+            { item: "landmine", count: 2, weight: 0.2 }
         ],
         special_guns: [
             { item: "micro_uzi", weight: 1.25 },
@@ -759,7 +765,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "mg5", weight: 0.005 },
             { item: "tango_51", weight: 0.004 },
             { item: "dual_deagle", weight: 0.003 },
-            { item: "ak67", weight: 0.3 }
+            { item: "ak67", weight: 0.3 },
+            { item: "lewis_gun", weight: 0.0125 },
+            { item: "aircannon", weight: 0.001 }
         ],
         special_healing_items: [
             { item: "cola", weight: 3 },
@@ -771,9 +779,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "4x_scope", weight: 1 },
             { item: "8x_scope", weight: 0.2 },
             { item: "16x_scope", weight: 0.0005 },
-            { item: "3xt_scope", weight: 0.05 },
-            { item: "5xt_scope", weight: 0.005 },
-            // { item: "4xn_scope", weight: 0.002 }
+            { item: "3x_thermal_scope", weight: 0.05 },
+            { item: "5x_thermal_scope", weight: 0.005 },
+            { item: "4x_night_vision_scope", weight: 0.002 }
         ],
         special_equipment: [
             { item: "basic_helmet", weight: 1 },
@@ -802,9 +810,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
         airdrop_scopes: [
             { item: "8x_scope", weight: 1 },
             { item: "16x_scope", weight: 0.005 },
-            { item: "3xt_scope", weight: 0.01 },
-            { item: "5xt_scope", weight: 0.005 },
-            // { item: "4xn_scope", weight: 0.002 }
+            { item: "3x_thermal_scope", weight: 0.01 },
+            { item: "5x_thermal_scope", weight: 0.005 },
+            { item: "4x_night_vision_scope", weight: 0.002 }
         ],
         airdrop_healing_items: [
             { item: "gauze", count: 5, weight: 1.5 },
@@ -1214,8 +1222,8 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { table: "healing_items", weight: 1 },
             { table: "pumpkin_obstacl_ammo", weight: 1 },
             { table: "guns", weight: 0.9 },
-       ],
-       guns: [
+        ],
+        guns: [
             { item: "g19", weight: 2 },
             { item: "m1895", weight: 1.75 },
             { item: "mpx", weight: 1.7 },
@@ -1292,7 +1300,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "negev", weight: 0.005 },
             { item: "mg5", weight: 0.005 },
             { item: "tango_51", weight: 0.004 },
-            { item: "dual_deagle", weight: 0.003 }
+            { item: "dual_deagle", weight: 0.003 },
+            { item: "lewis_gun", weight: 0.0125 },
+            { item: "aircannon", weight: 0.001 }
         ],
         airdrop_crate: [
             [{ table: "airdrop_equipment", weight: 1 }],
@@ -1626,6 +1636,7 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "tango_51", weight: 0.0125 },
             { item: "model_89", weight: 0.0125 },
             { item: "vepr12", weight: 0.0125 },
+            { item: "lewis_gun", weight: 0.0125 },
             { item: "rgs", weight: 0.0125 },
 
             // 1% chance for one of these
@@ -1633,7 +1644,8 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "rsh12", weight: 0.002 },
             { item: "vks", weight: 0.002 },
             { item: "flare", weight: 0.002 },
-            { item: "m1_garand", weight: 0.002 }
+            { item: "m1_garand", weight: 0.002 },
+            { item: "aircannon", weight: 0.001 }
         ],
         airdrop_guns: [
             { item: "m590m", weight: 1 },
@@ -1800,7 +1812,8 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
         throwables: [
             { item: "frag_grenade", count: 2, weight: 1 },
             { item: "smoke_grenade", count: 2, weight: 1 },
-            { item: "sm56", weight: 0.5 }
+            { item: "sm56", weight: 0.5 },
+            { item: "landmine", count: 2, weight: 0.2 }
         ],
         healing_items: [
             { item: "gauze", count: 5, weight: 3 },
@@ -1865,7 +1878,8 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
 
         throwables: [
             { item: "frag_grenade", count: 2, weight: 1 },
-            { item: "smoke_grenade", count: 2, weight: 1 }
+            { item: "smoke_grenade", count: 2, weight: 1 },
+            { item: "landmine", count: 2, weight: 0.2 }
         ],
 
         ammo: [
@@ -1968,12 +1982,14 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "model_89", weight: 0.0125 },
             { item: "rgs", weight: 0.0125 },
             { item: "ak67", weight: 0.0125 },
+            { item: "lewis_gun", weight: 0.0125 },
 
             // 1%
             { item: "flare", weight: 0.002 },
             { item: "mg5", weight: 0.002 },
             { item: "shak12", weight: 0.002 },
-            { item: "pk61", weight: 0.002 }
+            { item: "pk61", weight: 0.002 },
+            { item: "aircannon", weight: 0.001 }
         ],
 
         guns: [
@@ -2131,6 +2147,18 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
                 { item: "mosin_nagant", weight: 0.01 },
                 { item: "vks", weight: 0.01 },
                 { item: "model_89", weight: 0.01 }
+            ]
+        },
+
+        mg_crate: {
+            min: 1,
+            max: 2,
+            loot: [
+                { item: "lewis_gun", weight: 1 },
+                { item: "fn_fal", weight: 0.2 },
+                { item: "arx160", weight: 0.3 },
+                { item: "mcx_spear", weight: 0.2 },
+                { item: "mg36", weight: 0.5 }
             ]
         }
     },
@@ -2448,7 +2476,8 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
         },
         grenade_box: [
             { item: "frag_grenade", weight: 1, count: 2 },
-            { item: "smoke_grenade", weight: 1, count: 2 }
+            { item: "smoke_grenade", weight: 1, count: 2 },
+            { item: "landmine", weight: 0.2, count: 2 }
         ],
         grenade_crate: {
             min: 1,
@@ -2996,9 +3025,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "4x_scope", weight: 1 },
             { item: "8x_scope", weight: 0.1 },
             { item: "16x_scope", weight: 0.00025 },
-            { item: "3xt_scope", weight: 0.02 },
-            { item: "5xt_scope", weight: 0.002 },
-            // { item: "4xn_scope", weight: 0.002 }
+            { item: "3x_thermal_scope", weight: 0.02 },
+            { item: "5x_thermal_scope", weight: 0.002 },
+            { item: "4x_night_vision_scope", weight: 0.002 }
         ],
         equipment: [
             { item: "basic_helmet", weight: 1 },
@@ -3034,7 +3063,8 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
         throwables: [
             { item: "frag_grenade", count: 2, weight: 1 },
             { item: "smoke_grenade", count: 2, weight: 1 },
-            { item: "c4", count: 2, weight: 0.2 }
+            { item: "c4", count: 2, weight: 0.2 },
+            { item: "landmine", count: 2, weight: 0.2 }
         ],
         special_guns: [
             { item: "micro_uzi", weight: 1.25 },
@@ -3072,7 +3102,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "mg5", weight: 0.005 },
             { item: "tango_51", weight: 0.004 },
             { item: "dual_deagle", weight: 0.003 },
-            { item: "ak67", weight: 0.3 }
+            { item: "ak67", weight: 0.3 },
+            { item: "lewis_gun", weight: 0.0125 },
+            { item: "aircannon", weight: 0.001 }
         ],
         special_healing_items: [
             { item: "cola", weight: 3 },
@@ -3084,9 +3116,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "4x_scope", weight: 1 },
             { item: "8x_scope", weight: 0.2 },
             { item: "16x_scope", weight: 0.0005 },
-            { item: "3xt_scope", weight: 0.05 },
-            { item: "5xt_scope", weight: 0.005 },
-            // { item: "4xn_scope", weight: 0.002 }
+            { item: "3x_thermal_scope", weight: 0.05 },
+            { item: "5x_thermal_scope", weight: 0.005 },
+            { item: "4x_night_vision_scope", weight: 0.002 }
         ],
         special_equipment: [
             { item: "basic_helmet", weight: 1 },
@@ -3115,9 +3147,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
         airdrop_scopes: [
             { item: "8x_scope", weight: 1 },
             { item: "16x_scope", weight: 0.005 },
-            { item: "3xt_scope", weight: 0.01 },
-            { item: "5xt_scope", weight: 0.005 },
-            // { item: "4xn_scope", weight: 0.002 }
+            { item: "3x_thermal_scope", weight: 0.01 },
+            { item: "5x_thermal_scope", weight: 0.005 },
+            { item: "4x_night_vision_scope", weight: 0.002 }
         ],
         airdrop_healing_items: [
             { item: "gauze", count: 5, weight: 1.5 },
@@ -3448,6 +3480,9 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
                 { table: "airdrop_guns", weight: 0.5 },
                 { table: "silly_guns", weight: 0.1 }
             ]
+        ],
+        mg_crate: [
+            { item: "lewis_gun", weight: 1 }
         ]
     },
 };

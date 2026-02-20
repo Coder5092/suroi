@@ -84,6 +84,7 @@ export type ThrowableDefinition = InventoryItemDefinition & {
         }
     }
     readonly c4?: boolean
+    readonly landmine?: boolean
     readonly summonAirdrop?: boolean
     readonly maxSwapCount?: number
     readonly pinSkin?: boolean
@@ -449,5 +450,52 @@ export const Throwables = new InventoryItemDefinitions<ThrowableDefinition>([
         killfeedFrame: "m202",
         explosion: "infected_seed_explosion_m202",
         liveImage: "proj_seed_infected"
-    })
+    }),
+    {
+        idString: "landmine",
+        name: "Landmine",
+        defType: DefinitionType.Throwable,
+        tier: Tier.S,
+        landmine: true,
+        cookable: false,
+        fuseTime: 10,
+        cookTime: 250,
+        throwTime: 150,
+        cookSpeedMultiplier: 0.7,
+        health: 40,
+        speedMultiplier: 1,
+        hitboxRadius: 1,
+        fireDelay: 250,
+        physics: {
+            maxThrowDistance: 128,
+            initialZVelocity: 4,
+            initialAngularVelocity: 10,
+            initialHeight: 0.5,
+            drag: {
+                air: 0.7,
+                ground: 6,
+                water: 8
+            }
+        },
+        image: {
+            position: Vec(60, 43),
+            angle: 60,
+            zIndex: 5
+        },
+        detonation: {
+            explosion: "c4_explosion"
+        },
+        animation: {
+            liveImage: "proj_landmine",
+            activatedImage: "proj_landmine_activated",
+            cook: {
+                leftFist: Vec(2, -1),
+                rightFist: Vec(3, 0)
+            },
+            throw: {
+                leftFist: Vec(1.9, -1.75),
+                rightFist: Vec(4, 2.15)
+            }
+        }
+    }
 ]);

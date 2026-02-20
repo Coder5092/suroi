@@ -127,6 +127,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -212,7 +214,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇧🇷 Português (Brasil) (86% Complete) - br.hjson
+## 🇧🇷 Português (Brasil) (85% Complete) - br.hjson
 
 ### Invalid Keys
 
@@ -272,6 +274,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_oc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -399,6 +403,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -569,6 +575,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -660,7 +668,7 @@ This file is a report of all errors and missing keys in the translation files of
 
 ### (No Undefined Keys)
 
-## 🇪🇸 Español (59% Complete) - es.hjson
+## 🇪🇸 Español (58% Complete) - es.hjson
 
 ### Invalid Keys
 
@@ -760,6 +768,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -845,7 +855,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇪🇪 eesti (83% Complete) - et.hjson
+## 🇪🇪 eesti (82% Complete) - et.hjson
 
 ### Invalid Keys
 
@@ -1049,6 +1059,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_ea` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `overclocked` is not defined
@@ -1095,6 +1107,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `kf_disconnected` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -1211,6 +1225,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -1353,6 +1369,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_ea` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `overclocked` is not defined
@@ -1381,6 +1399,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `kf_disconnected` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -1512,6 +1532,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -1651,6 +1673,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_ea` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `overclocked` is not defined
@@ -1681,7 +1705,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇮🇹 Italiano (53% Complete) - it.hjson
+## 🇮🇹 Italiano (52% Complete) - it.hjson
 
 ### Invalid Keys
 
@@ -1814,6 +1838,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -1899,7 +1925,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇯🇵 日本語 (98% Complete) - jp.hjson
+## 🇯🇵 日本語 (97% Complete) - jp.hjson
 
 ### Invalid Keys
 
@@ -2151,6 +2177,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `settings_weapon_compare_condensed` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 
 ## 🇱🇹 Lietuvių (55% Complete) - lt.hjson
 
@@ -2268,6 +2296,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -2469,6 +2499,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -2554,7 +2586,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇳🇱 Nederlands (91% Complete) - nl.hjson
+## 🇳🇱 Nederlands (90% Complete) - nl.hjson
 
 ### Invalid Keys
 
@@ -2591,6 +2623,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `pumpkin_explosion` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -2707,6 +2741,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -2880,6 +2916,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -2965,7 +3003,7 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `overdrive` is not defined
 - Key `overdrive_desc` is not defined
 
-## 🇷🇴 Română (91% Complete) - ro.hjson
+## 🇷🇴 Română (90% Complete) - ro.hjson
 
 ### (No Invalid Keys)
 
@@ -3000,6 +3038,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `pumpkin_explosion` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `plumpkin_shuffle` is not defined
 - Key `plumpkin_shuffle_desc` is not defined
 - Key `eternal_magnetism` is not defined
@@ -3064,11 +3104,13 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_ea` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `baby_plumpkin_pie_desc` is not defined
 
-## 🇮🇳 தமிழ் (87% Complete) - ta.hjson
+## 🇮🇳 தமிழ் (86% Complete) - ta.hjson
 
 ### Invalid Keys
 
@@ -3113,6 +3155,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `pumpkin_explosion` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `berserker` is not defined
 - Key `berserker_desc` is not defined
 - Key `overclocked` is not defined
@@ -3201,6 +3245,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `second_wind_desc` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `flechettes` is not defined
 - Key `flechettes_desc` is not defined
 - Key `sabot_rounds` is not defined
@@ -3520,6 +3566,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `kf_disconnected` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 
 ## 🇻🇳 Tiếng Việt (83% Complete) - vi.hjson
 
@@ -3573,6 +3621,8 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `region_ea` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 - Key `loot_baron` is not defined
 - Key `loot_baron_desc` is not defined
 - Key `overclocked` is not defined
@@ -3830,4 +3880,6 @@ This file is a report of all errors and missing keys in the translation files of
 - Key `kf_disconnected` is not defined
 - Key `night_vision` is not defined
 - Key `night_vision_desc` is not defined
+- Key `thermal_vision` is not defined
+- Key `thermal_vision_desc` is not defined
 

@@ -127,6 +127,8 @@ type BaseGunDefinition = InventoryItemDefinition & {
 
     readonly noMuzzleFlash?: boolean
     readonly ballistics: BaseBulletDefinition
+
+    readonly ignoreIndestructible?: boolean
 } & ReloadOnEmptyMixin & BurstFireMixin & DualDefMixin;
 
 type ReloadOnEmptyMixin = ({
@@ -3021,6 +3023,78 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
             }
         }
     },
+    {
+        idString: "aircannon",
+        name: "Industrial Air Cannon",
+        defType: DefinitionType.Gun,
+        fireMode: FireMode.Auto,
+        tier: Tier.A,
+        ammoType: "co2can",
+        ammoSpawnAmount: 0,
+        capacity: 200,
+        ignoreIndestructible: true,
+        reloadTime: 3,
+        fireDelay: 15,
+        switchDelay: 600,
+        noMuzzleFlash: true,
+        speedMultiplier: 0.495,
+        recoilMultiplier: 1,
+        recoilDuration: 200,
+        shotSpread: 0,
+        moveSpread: 0,
+        length: 7.35,
+        fists: {
+            left: Vec(119, 28),
+            right: Vec(65, 87),
+            animationDuration: 100
+        },
+        image: {
+            position: Vec(29.7, 53.5),
+            zIndex: 4
+        },
+        gasParticles: {
+            spread: 360,
+            amount: 75,
+            minLife: 7500,
+            maxLife: 20000,
+            minSpeed: 3,
+            maxSpeed: 7,
+            minSize: 0.4,
+            maxSize: 0.6
+        },
+        ballistics: {
+            damage: 1,
+            obstacleMultiplier: 1000,
+            speed: 1,
+            range: 150,
+            trail: {
+                frame: "small_gas",
+                interval: 5,
+                amount: 3,
+                tint: 0x707070,
+                alpha: { min: 0.6, max: 0.85 },
+                scale: { min: 0.1, max: 0.2 },
+                spreadSpeed: { min: 1, max: 3 },
+                lifetime: { min: 1500, max: 3000 }
+            },
+            ignoreCoolerGraphics: true, // we want smoke trail when it launches plumpkins
+        },
+        cameraShake: {
+            duration: 150,
+            intensity: 12.5
+        },
+        backblast: {
+            length: 7,
+            min: 9,
+            max: 12,
+            particlesAmount: 32,
+            duration: 800,
+            scale: {
+                min: 0.1,
+                max: 0.5
+            }
+        }
+    },
     //
     // Fictional weapons
     //
@@ -3452,6 +3526,7 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
             }
         }
     },
+
     {
         idString: "ak67",
         name: "AK-67",
@@ -3496,6 +3571,43 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
             damage: 14,
             obstacleMultiplier: 1.5,
             speed: 0.26,
+            range: 300
+        }
+    },
+    {
+        idString: "lewis_gun",
+        name: "Mounted Machine Gun",
+        defType: DefinitionType.Gun,
+        tier: Tier.S,
+        ammoType: "762mm",
+        ammoSpawnAmount: 255,
+        capacity: 255,
+        extendedCapacity: 255,
+        reloadTime: 6,
+        fireDelay: 30,
+        switchDelay: 1500,
+        speedMultiplier: 0,
+        recoilMultiplier: 0.7,
+        recoilDuration: 50,
+        fireMode: FireMode.Auto,
+        shotSpread: 3.5,
+        moveSpread: 7.5,
+        length: 11.8,
+        fists: {
+            left: Vec(120, -10),
+            right: Vec(40, 0),
+            rightZIndex: 4,
+            animationDuration: 100
+        },
+        image: { position: Vec(120, 0) },
+        casingParticles: [{
+            frame: "casing_762x54mmR",
+            position: Vec(4.7, 0.6)
+        }],
+        ballistics: {
+            damage: 14,
+            obstacleMultiplier: 2,
+            speed: 0.3,
             range: 300
         }
     }

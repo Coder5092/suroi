@@ -5,7 +5,7 @@ import { getBadgeIdString, isEmoteBadge, type EmoteDefinition } from "@common/de
 import { Ammos } from "@common/definitions/items/ammos";
 import { HealingItems } from "@common/definitions/items/healingItems";
 import { type GunDefinition } from "@common/definitions/items/guns";
-import { PerkCategories, PerkIds, type PerkDefinition } from "@common/definitions/items/perks";
+import { PerkCategories, PerkData, PerkIds, type PerkDefinition } from "@common/definitions/items/perks";
 import { DEFAULT_SCOPE, type ScopeDefinition } from "@common/definitions/items/scopes";
 import { Skins } from "@common/definitions/items/skins";
 import { Loots } from "@common/definitions/loots";
@@ -807,7 +807,13 @@ class UIManagerClass {
             }
         }
 
-        if (zoom) CameraManager.zoom = zoom;
+        if (zoom) {
+            CameraManager.zoom = zoom;
+        }
+
+        if (perks) {
+            CameraManager.nightVision = perks.includes(PerkData.night_vision);
+        }
 
         const hasAdrenaline = adrenaline !== undefined;
         if (hasAdrenaline) {

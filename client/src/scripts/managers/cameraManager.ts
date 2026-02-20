@@ -4,7 +4,7 @@ import { EaseFunctions, Numeric } from "@common/utils/math";
 import { randomPointInsideCircle } from "@common/utils/random";
 import { Vec, type Vector } from "@common/utils/vector";
 import { ShockwaveFilter } from "pixi-filters";
-import { Container, Filter } from "pixi.js";
+import { ColorMatrixFilter, Container, Filter, Graphics } from "pixi.js";
 import { GameConsole } from "../console/gameConsole";
 import { Game } from "../game";
 import { LAYER_TRANSITION_DELAY, PIXI_SCALE } from "../utils/constants";
@@ -119,9 +119,32 @@ class CameraManagerClass {
         );
 
         this.container.position.set(-cameraPos.x, -cameraPos.y);
+
+        if (this.nightVision) {
+            let filter = new ColorMatrixFilter();
+            filter.saturate(-1);
+
+            let filter2 = new ColorMatrixFilter();
+            filter2.tint(0x66BF2F, true);
+            // filter2.tint('green', true);
+            filter2.brightness(2.2, true);
+
+            this.container.filters = [filter, filter2];
+            this._hadNightVision = true;
+        } else {
+            if (this._hadNightVision) {
+                this.container.filters = this.realFilters;
+                this._hadNightVision = false;
+            }
+        }
     }
 
+    realFilters?: Filter | Filter[];
+
     objectUpdateTimeout?: Timeout;
+
+    nightVision: boolean = false;
+    _hadNightVision: boolean = this.nightVision;
 
     layerTransition = false;
 

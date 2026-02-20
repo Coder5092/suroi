@@ -1918,6 +1918,26 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
         winterVariations: 6
     },
     {
+        idString: "mg_crate",
+        name: "Machine Gun Crate",
+        defType: DefinitionType.Obstacle,
+        material: "crate",
+        health: 80,
+        scale: {
+            spawnMin: 1,
+            spawnMax: 1,
+            destroy: 0.5
+        },
+        spawnMode: MapObjectSpawnMode.Grass,
+        rotationMode: RotationMode.Binary,
+        hitbox: RectangleHitbox.fromRect(9.2, 9.2),
+        hasLoot: true,
+        frames: {
+            particle: "crate_particle",
+            residue: "regular_crate_residue"
+        }
+    },
+    {
         idString: "nsd_crate",
         name: "NSD Crate",
         defType: DefinitionType.Obstacle,

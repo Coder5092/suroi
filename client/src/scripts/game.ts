@@ -27,7 +27,7 @@ import { Vec, type Vector } from "@common/utils/vector";
 import { sound, type Sound } from "@pixi/sound";
 import FontFaceObserver from "fontfaceobserver";
 import $ from "jquery";
-import { Application, Color, Container, loadTextures } from "pixi.js";
+import { Application, Color, Container, Graphics, loadTextures, Rectangle } from "pixi.js";
 import "pixi.js/prepare";
 import { setUpCommands } from "./console/commands";
 import { GameConsole } from "./console/gameConsole";
@@ -463,25 +463,25 @@ function getWeaponComparisonPayload(
     const payload =
         lootDefinition.defType === DefinitionType.Gun
             ? buildWeaponComparisonPayload(
-                  lootDefinition as GunDefinition,
-                  current as GunDefinition | undefined,
-                  condensedEnabled,
-                  {
-                      compare: compareGunDefinitions,
-                      condensedCompare: getGunCondensedLines,
-                      condensedInspect: getGunCondensedInspectLines
-                  }
-              )
+                lootDefinition as GunDefinition,
+                current as GunDefinition | undefined,
+                condensedEnabled,
+                {
+                    compare: compareGunDefinitions,
+                    condensedCompare: getGunCondensedLines,
+                    condensedInspect: getGunCondensedInspectLines
+                }
+            )
             : buildWeaponComparisonPayload(
-                  lootDefinition as MeleeDefinition,
-                  current as MeleeDefinition | undefined,
-                  condensedEnabled,
-                  {
-                      compare: compareMeleeDefinitions,
-                      condensedCompare: getMeleeCondensedLines,
-                      condensedInspect: getMeleeCondensedInspectLines
-                  }
-              );
+                lootDefinition as MeleeDefinition,
+                current as MeleeDefinition | undefined,
+                condensedEnabled,
+                {
+                    compare: compareMeleeDefinitions,
+                    condensedCompare: getMeleeCondensedLines,
+                    condensedInspect: getMeleeCondensedInspectLines
+                }
+            );
 
     return payload.lines.length ? payload : undefined;
 }
@@ -518,8 +518,7 @@ function renderWeaponComparison(payload?: WeaponComparisonPayload): void {
 
             $("<span>")
                 .addClass(
-                    `weapon-comparison-diff weapon-comparison-diff--${
-                        mode === "compare" ? line.trend : "neutral"
+                    `weapon-comparison-diff weapon-comparison-diff--${mode === "compare" ? line.trend : "neutral"
                     }${mode === "inspect" ? " weapon-comparison-diff--inspect" : ""}`
                 )
                 .text(line.value)
@@ -685,7 +684,7 @@ export const Game = new (class Game {
         CameraManager.init();
         GasManager.init();
 
-        const initPixi = async(): Promise<void> => {
+        const initPixi = async (): Promise<void> => {
             const renderMode = GameConsole.getBuiltInCVar("cv_renderer");
             const renderRes = GameConsole.getBuiltInCVar("cv_renderer_res");
 
@@ -818,10 +817,10 @@ export const Game = new (class Game {
             if (river.isTrail) continue;
 
             const closestPoint = river.getPosition(river.getClosestT(position)),
-                  distanceToRiver = Geometry.distanceSquared(position, closestPoint),
-                  riverWidth = river.waterWidths[i] + 2,
-                  normalizedDistance = Numeric.delerp(distanceToRiver, (30 + riverWidth) ** 2, riverWidth ** 2),
-                  riverStrength = Numeric.clamp(river.waterWidths[i] / 8, 0.25, 1);
+                distanceToRiver = Geometry.distanceSquared(position, closestPoint),
+                riverWidth = river.waterWidths[i] + 2,
+                normalizedDistance = Numeric.delerp(distanceToRiver, (30 + riverWidth) ** 2, riverWidth ** 2),
+                riverStrength = Numeric.clamp(river.waterWidths[i] / 8, 0.25, 1);
             riverWeight = Numeric.max(normalizedDistance * riverStrength, riverWeight);
         }
         this.riverAmbience.volume = riverWeight;
@@ -1117,7 +1116,7 @@ export const Game = new (class Game {
             this.gameOver = true;
             this._socket?.close();
 
-            ui.splashUi.fadeIn(400, async() => {
+            ui.splashUi.fadeIn(400, async () => {
                 this.pixi.stop();
                 void this.music?.play();
 
@@ -1533,7 +1532,7 @@ export const Game = new (class Game {
                         hideSecondFloor = true;
                     }
 
-                // tree leaves
+                    // tree leaves
                 } else if (isObstacle && object.definition.isTree && object.leavesSprite && !object.dead) {
                     const {
                         minDist = 32,
@@ -1545,7 +1544,7 @@ export const Game = new (class Game {
                     object.image.alpha = Numeric.remap(dist, minDist, maxDist, trunkMinAlpha, 1);
                     object.leavesSprite.alpha = Numeric.remap(dist, minDist, maxDist, leavesMinAlpha, 1);
 
-                // metal detectors
+                    // metal detectors
                 } else if (isObstacle && object.definition.detector && object.notOnCoolDown) {
                     for (const player of this.objects.getCategory(ObjectCategory.Player)) {
                         if (
@@ -1564,7 +1563,7 @@ export const Game = new (class Game {
                         setTimeout(() => object.notOnCoolDown = true, 1000);
                     }
 
-                // bush particles
+                    // bush particles
                 } else if (isObstacle && object.definition.material === "bush" && object.definition.noCollisions) {
                     for (const player of this.objects.getCategory(ObjectCategory.Player)) {
                         const inBush = equalLayer(object.layer, player.layer) && object.hitbox.isPointInside(player.position);
@@ -1752,7 +1751,7 @@ export const Game = new (class Game {
                         if (player.downed && (object?.isLoot || (object?.isObstacle && object.definition.noInteractMessage))) interactMsg.hide();
                     }
                 } else {
-                   if (!UI_DEBUG_MODE) interactMsg.hide();
+                    if (!UI_DEBUG_MODE) interactMsg.hide();
                 }
 
                 renderWeaponComparison(comparisonPayload);
@@ -1789,26 +1788,26 @@ export const Game = new (class Game {
                             ) || (
                                 type === DefinitionType.Gun
                                 && weapons?.some(
-                                        weapon => {
-                                            const definition = weapon?.definition;
+                                    weapon => {
+                                        const definition = weapon?.definition;
 
-                                            return definition?.defType === DefinitionType.Gun
-                                                && (
+                                        return definition?.defType === DefinitionType.Gun
+                                            && (
+                                                (
+                                                    object?.definition === definition
+                                                    && !definition.isDual
+                                                    && definition.dualVariant
+                                                ) // Picking up a single pistol when inventory has single pistol
+                                                || (
                                                     (
-                                                        object?.definition === definition
-                                                        && !definition.isDual
-                                                        && definition.dualVariant
-                                                    ) // Picking up a single pistol when inventory has single pistol
-                                                    || (
-                                                        (
-                                                            object.definition as DualGunNarrowing | undefined
-                                                        )?.singleVariant === definition.idString
-                                                    )
-                                                    // Picking up dual pistols when inventory has a pistol
-                                                    // TODO implement splitting of dual guns to not lost reload later
-                                                );
-                                        }
-                                    )
+                                                        object.definition as DualGunNarrowing | undefined
+                                                    )?.singleVariant === definition.idString
+                                                )
+                                                // Picking up dual pistols when inventory has a pistol
+                                                // TODO implement splitting of dual guns to not lost reload later
+                                            );
+                                    }
+                                )
                             )
                         )
                     ) {

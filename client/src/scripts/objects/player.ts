@@ -324,7 +324,7 @@ export class Player extends GameObject.derive(ObjectCategory.Player) {
         if (this.disguiseContainer) this.disguiseContainer.position.copyFrom(this.container.position);
     }
 
-    override update(): void { /* bleh */ }
+    override update(): void {}
 
     override updateInterpolation(): void {
         this.updateContainerPosition();
@@ -2058,7 +2058,7 @@ export class Player extends GameObject.derive(ObjectCategory.Player) {
                     return;
                 }
 
-                this.playSound(this.activeItem.c4 ? "c4_pin" : "throwable_pin");
+                this.playSound(this.activeItem.c4 || this.activeItem.landmine ? "c4_pin" : "throwable_pin");
 
                 const def = this.activeItem;
                 const projImage = this.images.weapon;

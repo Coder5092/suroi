@@ -226,4 +226,17 @@ export const Ammos = new ObjectDefinitions<AmmoDefinition>([
         },
         ephemeral: true
     },
+    {
+        idString: "co2can",
+        name: "CO2 Canister",
+        defType: DefinitionType.Ammo,
+        maxStackSize: 0,
+        minDropAmount: 0,
+        characteristicColor: {
+            hue: 200,
+            saturation: 50,
+            lightness: 65
+        },
+        ephemeral: true
+    },
 ]);

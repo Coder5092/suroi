@@ -317,7 +317,9 @@ export async function finalizeUI(): Promise<void> {
         filter.saturate(-(1 - canvasFilters.saturation));
         filter.brightness(canvasFilters.brightness, true);
     }
+
     CameraManager.container.filters = filter ? [filter] : [];
+    CameraManager.realFilters = filter ? [filter] : [];
     MapManager.container.filters = filter ? [filter] : [];
 }
 

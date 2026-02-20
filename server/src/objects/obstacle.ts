@@ -16,6 +16,7 @@ import { type Bullet } from "./bullet";
 import { BaseGameObject, DamageParams, type GameObject } from "./gameObject";
 import { type Player } from "./player";
 import { Explosion } from "./explosion";
+import { GunDefinition } from "@common/definitions/items/guns";
 
 export class Obstacle extends BaseGameObject.derive(ObjectCategory.Obstacle) {
     override readonly fullAllocBytes = 10;
@@ -165,7 +166,12 @@ export class Obstacle extends BaseGameObject.derive(ObjectCategory.Obstacle) {
     damage(params: DamageParams & { position?: Vector }): void {
         const definition = this.definition;
         const { amount, source, weaponUsed, position } = params;
-        if (this.health === 0 || definition.indestructible) return;
+        if (this.health === 0) return;
+        else if (this.definition.indestructible) {
+            if (params.weaponUsed != undefined) {
+                if (! (params.weaponUsed.definition as GunDefinition).ignoreIndestructible) return;
+            } else return;
+        }
 
         const weaponIsItem = weaponUsed instanceof InventoryItemBase;
         const weaponDef = weaponIsItem ? weaponUsed.definition : undefined;

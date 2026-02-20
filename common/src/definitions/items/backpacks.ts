@@ -39,6 +39,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "frag_grenade": 3,
             "smoke_grenade": 3,
             "c4": 2,
+            "landmine": 2,
             "confetti_grenade": 5,
             "sm56": 2
         },
@@ -69,6 +70,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "frag_grenade": 6,
             "smoke_grenade": 6,
             "c4": 4,
+            "landmine": 4,
             "confetti_grenade": 9,
             "sm56": 4
         },
@@ -99,6 +101,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "frag_grenade": 9,
             "smoke_grenade": 9,
             "c4": 6,
+            "landmine": 6,
             "confetti_grenade": 12,
             "sm56": 6
         },
@@ -128,6 +131,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "frag_grenade": 12,
             "smoke_grenade": 12,
             "c4": 8,
+            "landmine": 8,
             "confetti_grenade": 16,
             "sm56": 8,
             "67cal": 6767,
@@ -158,6 +162,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "frag_grenade": 12,
             "smoke_grenade": 12,
             "c4": 8,
+            "landmine": 8,
             "confetti_grenade": 16,
             "sm56": 8,
             "67cal": 6767,
