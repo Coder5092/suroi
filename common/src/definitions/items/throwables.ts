@@ -497,5 +497,49 @@ export const Throwables = new InventoryItemDefinitions<ThrowableDefinition>([
                 rightFist: Vec(4, 2.15)
             }
         }
-    }
+    },
+    {
+        idString: "throwable_chair",
+        name: "Chair",
+        defType: DefinitionType.Throwable,
+        tier: Tier.C,
+        cookable: false,
+        fuseTime: 200,
+        cookTime: 10,
+        throwTime: 150,
+        speedMultiplier: 0.6,
+        cookSpeedMultiplier: 0.7,
+        impactDamage: 20,
+        obstacleMultiplier: 2,
+        hitboxRadius: 3,
+        fireDelay: 250,
+        physics: {
+            maxThrowDistance: 140,
+            initialZVelocity: 4,
+            initialAngularVelocity: 10,
+            initialHeight: 0.5
+        },
+        image: {
+            position: Vec(0, 0),
+            angle: 0,
+            zIndex: 5
+        },
+        detonation: {
+            explosion: "chair_explosion"
+        },
+        animation: {
+            pinImage: "proj_chair",
+            liveImage: "proj_chair",
+            leverImage: "proj_chair",
+            cook: {
+                cookingImage: "proj_chair",
+                leftFist: Vec(-1.5, 0),
+                rightFist: Vec(1.5, 0)
+            },
+            throw: {
+                leftFist: Vec(-1.5, 0),
+                rightFist: Vec(1.5, 0)
+            }
+        }
+    },
 ]);

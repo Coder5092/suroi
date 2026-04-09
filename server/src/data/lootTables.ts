@@ -1143,6 +1143,11 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
                 { table: "airdrop_guns", weight: 0.5 },
                 { table: "silly_guns", weight: 0.1 }
             ]
+        ],
+        chair: [
+            { item: NullString, weight: 1 },
+            { item: "throwable_chair", weight: 0.8 },
+            { item: "melee_chair", weight: 0.6 },
         ]
     },
 
@@ -1381,7 +1386,7 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             [{ item: "regular_helmet", weight: 1 }],
             [{ item: "regular_pack", weight: 1 }],
             [{ item: "12g", count: 15, weight: 1 }]
-        ],
+        ]
     },
 
     winter: {
@@ -2343,7 +2348,7 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
                 { item: "coal", weight: 1 },
                 { item: NullString, weight: 1 }
             ]
-        ],
+        ]
     },
     birthday: {},
     crates: {

@@ -3027,20 +3027,20 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
         idString: "aircannon",
         name: "Industrial Air Cannon",
         defType: DefinitionType.Gun,
-        fireMode: FireMode.Auto,
+        fireMode: FireMode.Single,
         tier: Tier.A,
         ammoType: "co2can",
         ammoSpawnAmount: 0,
-        capacity: 200,
-        ignoreIndestructible: true,
+        capacity: 5,
         reloadTime: 3,
-        fireDelay: 15,
+        fireDelay: 200,
         switchDelay: 600,
         noMuzzleFlash: true,
         speedMultiplier: 0.495,
         recoilMultiplier: 1,
         recoilDuration: 200,
         shotSpread: 0,
+        noSwap: true,
         moveSpread: 0,
         length: 7.35,
         fists: {
@@ -3078,6 +3078,9 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
                 lifetime: { min: 1500, max: 3000 }
             },
             ignoreCoolerGraphics: true, // we want smoke trail when it launches plumpkins
+            onHitExplosion: "massive_explosion",
+            explodeOnImpact: true,
+            allowRangeOverride: true
         },
         cameraShake: {
             duration: 150,
@@ -3610,7 +3613,55 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
             speed: 0.3,
             range: 300
         }
-    }
+    },
+    {
+        idString: "flamethrower",
+        name: "Flamethrower",
+        defType: DefinitionType.Gun,
+        tier: Tier.S,
+        ammoType: "co2can",
+        ammoSpawnAmount: 0,
+        fireDelay: 30,
+        switchDelay: 250,
+        speedMultiplier: 0.8,
+        noSwap: true,
+        recoilMultiplier: 0.8,
+        recoilDuration: 90,
+        fireMode: FireMode.Auto,
+        shotSpread: 20,
+        moveSpread: 28,
+        length: 5.3,
+        fists: {
+            left: Vec(40, 0),
+            right: Vec(40, 0),
+            leftZIndex: 4,
+            rightZIndex: 4,
+            animationDuration: 100
+        },
+        image: { position: Vec(70, -1) },
+        inventoryScale: 0.8,
+        gasParticles: gasParticlePresets.automatic,
+        capacity: 3000,
+        extendedCapacity: 4000,
+        reloadTime: 2,
+        ignoreIndestructible: true,
+        ballistics: {
+            damage: 9,
+            obstacleMultiplier: 2.5,
+            speed: 0.2,
+            range: 100
+        },
+        dual: {
+            tier: Tier.S,
+            leftRightOffset: 1.3,
+            fireDelay: 30,
+            shotSpread: 20,
+            moveSpread: 28,
+            capacity: 6000,
+            extendedCapacity: 8000,
+            reloadTime: 3.7
+        }
+    },
 ] satisfies readonly RawGunDefinition[]).flatMap((def: RawGunDefinition) => {
     if (def.dual === undefined) {
         return def;

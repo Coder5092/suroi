@@ -3978,7 +3978,9 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
         rotationMode: RotationMode.Limited,
         frames: {
             particle: "furniture_particle"
-        }
+        },
+        hasLoot: true,
+        lootTable: "chair"
     },
     {
         idString: "bookshelf",
@@ -5307,7 +5309,9 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
         rotationMode: RotationMode.Limited,
         frames: {
             particle: "office_chair_particle"
-        }
+        },
+        hasLoot: true,
+        lootTable: "chair"
     },
     {
         idString: "grey_office_chair",
@@ -5325,7 +5329,9 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
         rotationMode: RotationMode.Limited,
         frames: {
             particle: "grey_office_chair_particle"
-        }
+        },
+        hasLoot: true,
+        lootTable: "chair"
     },
     {
         idString: "life_preserver",
@@ -6842,7 +6848,9 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
         frames: {
             particle: "wine_barrel_particle",
             residue: "chair_residue"
-        }
+        },
+        hasLoot: true,
+        lootTable: "chair"
     },
     {
         idString: "tavern_basement_table_colliders",

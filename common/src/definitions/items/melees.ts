@@ -201,7 +201,7 @@ const crowbar = (name: string): MeleeDefinition => {
 };
 
 const sickle = (name: string): MeleeDefinition => {
-    return     {
+    return {
         idString: name.toLowerCase().replace(/'/g, "").replace(/ /g, "_"),
         name,
         defType: DefinitionType.Melee,
@@ -1232,7 +1232,7 @@ export const Melees = new InventoryItemDefinitions<MeleeDefinition>([
             left: Vec(66, -6),
             right: Vec(18, 54)
         },
-       image: {
+        image: {
             position: Vec(30, 56),
             angle: 175,
             lootScale: 0.425
@@ -1272,5 +1272,53 @@ export const Melees = new InventoryItemDefinitions<MeleeDefinition>([
                 }
             }
         ]
-    }
+    },
+    {
+        idString: "melee_chair",
+        name: "Chair",
+        defType: DefinitionType.Melee,
+        tier: Tier.C,
+        swingSound: "heavy_swing",
+        damage: 20,
+        speedMultiplier: 0.6,
+        obstacleMultiplier: 2,
+        radius: 4,
+        offset: Vec(50, 0),
+        cooldown: 450,
+        maxTargets: 2,
+        fists: {
+            animationDuration: 150,
+            left: Vec(70, -35),
+            right: Vec(70, 35)
+        },
+        animation: [
+            {
+                duration: 125,
+                fists: {
+                    left: Vec(130, -10),
+                    right: Vec(130, 10)
+                },
+                image: {
+                    position: Vec(130, 0),
+                    angle: 0
+                }
+            },
+            {
+                duration: 125,
+                fists: {
+                    left: Vec(70, -35),
+                    right: Vec(70, 35)
+                },
+                image: {
+                    position: Vec(70, 0),
+                    angle: 0
+                }
+            }
+        ],
+        image: {
+            position: Vec(0, 0),
+            angle: 0,
+            lootScale: 0.55
+        }
+    },
 ]);

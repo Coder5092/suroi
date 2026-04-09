@@ -18,7 +18,9 @@ export const Scopes = new ObjectDefinitions<ScopeDefinition>(([
     ["4x_night_vision", 130, false, PerkIds.NightVision],
     ["5x_thermal", 145, false, PerkIds.ThermalVision],
     ["8x", 160, false],
-    ["16x", 220, false]
+    ["16x", 220, false],
+    // ["32x", 440, false],
+    // ["64x", 880, false]
     // Value 190 reserved for possible 12x scope
 ] satisfies readonly [string, number, boolean, PerkIds?][]).map(([magnification, zoomLevel, defaultScope, perk]) => ({
     idString: `${magnification}_scope`,

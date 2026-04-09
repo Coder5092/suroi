@@ -801,4 +801,64 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>([
         sound: "metal_light_destroyed",
         decal: "explosion_decal"
     },
+    {
+        idString: "chair_explosion",
+        name: "Chair",
+        defType: DefinitionType.Explosion,
+        damage: 0,
+        obstacleMultiplier: 0,
+        radius: {
+            min: 0,
+            max: 0
+        },
+        cameraShake: {
+            duration: 0,
+            intensity: 0
+        },
+        animation: {
+            duration: 500,
+            tint: 0x8A7C7B,
+            scale: 0.5
+        },
+        shrapnelCount: 0,
+        ballistics: {
+            shrapnel: false,
+            damage: 0,
+            obstacleMultiplier: 0,
+            speed: 0,
+            range: 0
+        },
+        sound: "wood_destroyed",
+        // decal: "chair_residue"
+    },
+    {
+        idString: "massive_explosion",
+        name: "Idk why you do this now",
+        defType: DefinitionType.Explosion,
+        damage: 1,
+        obstacleMultiplier: 10000,
+        radius: {
+            min: 50,
+            max: 150
+        },
+        cameraShake: {
+            duration: 1000,
+            intensity: 200
+        },
+        animation: {
+            duration: 600,
+            tint: 0xffffff,
+            scale: 3
+        },
+        killfeedFrame: "explosion_big",
+        shrapnelCount: 50,
+        ballistics: {
+            shrapnel: true,
+            damage: 1,
+            obstacleMultiplier: 10000,
+            speed: 0.32,
+            range: 300,
+            rangeVariance: 1
+        }
+    },
 ]);

@@ -748,8 +748,8 @@ export class Player extends BaseGameObject.derive(ObjectCategory.Player) {
             ] = data.weaponPreset.split(" ");
 
             this.inventory.backpack = Loots.fromString("tactical_pack");
-            this.inventory.vest = Loots.fromString("developr_vest");
-            // this.inventory.vest = Loots.fromString("tactical_vest");
+            // this.inventory.vest = Loots.fromString("developr_vest");
+            this.inventory.vest = Loots.fromString("tactical_vest");
             this.inventory.helmet = Loots.fromString("tactical_helmet");
 
             const backpack = this.inventory.backpack;

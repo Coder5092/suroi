@@ -41,7 +41,8 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "c4": 2,
             "landmine": 2,
             "confetti_grenade": 5,
-            "sm56": 2
+            "sm56": 2,
+            "throwable_chair": 2,
         },
         noDrop: true
     },
@@ -72,7 +73,8 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "c4": 4,
             "landmine": 4,
             "confetti_grenade": 9,
-            "sm56": 4
+            "sm56": 4,
+            "throwable_chair": 4
         },
         defaultTint: 0xeeeeee
     },
@@ -103,7 +105,8 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "c4": 6,
             "landmine": 6,
             "confetti_grenade": 12,
-            "sm56": 6
+            "sm56": 6,
+            "throwable_chair": 6
         },
         defaultTint: 0x63754b
     },
@@ -135,6 +138,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "confetti_grenade": 16,
             "sm56": 8,
             "67cal": 6767,
+            "throwable_chair": 8
         },
         defaultTint: 0x3f3f3f
     },
@@ -166,6 +170,7 @@ export const Backpacks = new ObjectDefinitions<BackpackDefinition>([
             "confetti_grenade": 16,
             "sm56": 8,
             "67cal": 6767,
+            "throwable_chair": 8
         },
         noTint: true,
         perk: PerkIds.HollowPoints,
